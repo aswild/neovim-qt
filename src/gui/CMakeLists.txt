@@ -33,6 +33,8 @@ else()
 		)
 endif()
 
+list(APPEND SRCS_PLATFORM compat_qt${QT_VERSION_MAJOR}.cpp)
+
 add_subdirectory(shellwidget)
 
 include(GNUInstallDirs)
