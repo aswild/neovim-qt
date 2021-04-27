@@ -119,7 +119,7 @@ jobs:
         cinst --no-progress -y 7zip neovim
         pip install aqtinstall
         cd $(Build.BinariesDirectory)
-        python -m aqt install 6.0.0 windows desktop win64_msvc2019_64
+        python -m aqt install 6.0.0 windows desktop win64_msvc2019_64 -m Core5Compat
       displayName: Install Dependencies
     - powershell: |
         Write-Host "##vso[task.setvariable variable=PATH;]${env:PATH};C:\tools\neovim\Neovim\bin";
