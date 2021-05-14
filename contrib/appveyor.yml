@@ -55,3 +55,6 @@ deploy:
       appveyor_repo_tag: true
       configuration: RelWithDebInfo
       release_artifact: true
+on_failure:
+  - 7z a neovim-qt-failed.zip %APPVEYOR_BUILD_FOLDER%\INSTALL
+  - appveyor PushArtifact neovim-qt-failed.zip
