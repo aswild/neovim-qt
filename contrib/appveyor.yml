@@ -58,3 +58,5 @@ deploy:
 on_failure:
   - 7z a neovim-qt-failed.zip %APPVEYOR_BUILD_FOLDER%\INSTALL
   - appveyor PushArtifact neovim-qt-failed.zip
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
